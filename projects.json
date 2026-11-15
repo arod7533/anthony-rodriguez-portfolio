@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Old Man United",
+    "label": "FEATURED PROJECT / LIVE APPLICATION",
+    "description": "A mobile-friendly football team dashboard powered by Google Sheets. Explore season records, match results, player goals, clean sheets, and a Golden Boot leaderboard from one shared data source.",
+    "details": "Validates incoming match data, handles tied rankings, and retains the last successful view if a refresh fails.",
+    "tags": ["JavaScript", "Google Sheets", "GitHub Pages"],
+    "liveUrl": "https://arod7533.github.io/old-man-utd-stats/",
+    "sourceUrl": "https://github.com/arod7533/old-man-utd-stats"
+  }
+]
