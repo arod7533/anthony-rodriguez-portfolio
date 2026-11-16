@@ -27,6 +27,20 @@ summary = plain(content['PROFESSIONAL SUMMARY'])
 experience = content['EXPERIENCE'].strip()
 starts = list(re.finditer(r'^\*\*([^*\n]+)\*\*[ \t]+([A-Z][a-z]+ \d{4}[^\n]*)$',experience,re.M))
 if not starts: raise ValueError('No employers found. Use **Company** followed by a tab and dates.')
+def compact_dates(text):
+    months = {'January':'Jan','February':'Feb','March':'Mar','April':'Apr','June':'Jun','July':'Jul','August':'Aug','September':'Sep','October':'Oct','November':'Nov','December':'Dec'}
+    for full, short in months.items(): text = re.sub(r'\b'+full+r'\b', short, text)
+    return re.sub(r'\s*-\s*', ' – ', text.strip())
+
+def homepage_roles(roles):
+    output = []
+    for line in roles:
+        for entry in line.split('|'):
+            match = re.fullmatch(r'(.*?)\s*\(([^()]*)\)\s*', entry.strip())
+            title, dates = (match[1].strip(), match[2]) if match else (entry.strip(), '')
+            output.append('<div class="position-row"><span class="position-title">'+html.escape(title)+'</span>'+('<span class="position-dates">'+html.escape(compact_dates(dates))+'</span>' if dates else '')+'</div>')
+    return ''.join(output)
+
 articles=[]
 current_role=''; current_company=''
 for i,match in enumerate(starts):
@@ -38,8 +52,8 @@ for i,match in enumerate(starts):
     if i==0: current_role=plain(role);current_company=company
     # Every position is visible; descriptions remain exclusive to the full résumé.
     roles = re.findall(r'^\*\*\*(.+?)\*\*\*', experience[match.end():starts[i+1].start() if i+1<len(starts) else len(experience)], re.M)
-    role_html = ''.join('<p class="role">'+inline(title)+'</p>' for title in roles)
-    articles.append('<article><div class="time">'+inline(dates)+'</div><div><h3>'+inline(company)+'</h3>'+role_html+'</div></article>')
+    role_html = homepage_roles(roles)
+    articles.append('<article><div class="time">'+html.escape(compact_dates(dates))+'</div><div><h3>'+inline(company)+'</h3>'+role_html+'</div></article>')
 timeline='<div class="timeline">'+''.join(articles)+'</div>'
 skills = content['SKILLS & TRAINING'].strip()
 training=re.search(r'^\*\*Training:\*\*\s*(.+)$',skills,re.M)

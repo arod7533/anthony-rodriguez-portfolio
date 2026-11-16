@@ -30,3 +30,13 @@
 .education-item p{color:var(--muted)}
 .education-item time{color:var(--muted)}
 @media(max-width:700px){.about-right{grid-template-columns:1fr}}
+
+/* Compact career list with consistent promotion hierarchy. */
+.timeline article{grid-template-columns:170px minmax(0,1fr);gap:24px;padding:20px 22px}
+.timeline .time{font:12px/1.6 Arial,Helvetica,sans-serif;letter-spacing:0;color:var(--muted);padding-top:4px}
+.timeline h3{font-size:21px;margin:0 0 8px;line-height:1.35}
+.position-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;font-size:13px;line-height:1.6}
+.position-row+.position-row{margin-top:7px}
+.position-title{color:#9ebff5}
+.position-dates{font-size:11px;color:var(--muted);white-space:nowrap}
+@media(max-width:700px){.timeline article{grid-template-columns:1fr;gap:6px;padding:18px 16px}.timeline .time{font-size:11px;padding:0}.timeline h3{font-size:20px;margin-bottom:6px}.position-row{display:block}.position-dates{display:block;font-size:11px;margin-top:1px}}
