@@ -41,7 +41,7 @@ Build web and mobile applications supporting scheduling, medical imaging, and cl
 
 **NextEra Energy (EverBright)**	June 2024 - July 2026
 
-***Senior Software Development Engineer  (Sep 2025 - July 2026)  |  SDE II  (June 2024 - Sep 2025)***
+***Senior Software Development Engineer  (Sep 2025 - July 2026)  |  Software Development Engineer II  (June 2024 - Sep 2025)***
 
 *Build and maintain backend services and web applications supporting payments, deal processing, underwriting, risk, and revenue protection.*
 
