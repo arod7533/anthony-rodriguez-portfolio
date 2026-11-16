@@ -6,7 +6,7 @@ This repository is the ONLY working source for résumé and website. Edit resume
 ## Update workflow
 Read README. Edit resume.md, run `python3 build.py`, preview locally, report changes. `python3 dev.py` optionally watches source files and regenerates on save. It does not publish. Preserve Markdown section headings, employer/tab/date format, and role lines. Do not edit generated index.html or resume.html directly.
 
-Both homepage and printable résumé derive from resume.md. Homepage roles show company, title, dates, and first overview paragraph ONLY—no bullet lists or environment details. Full résumé keeps all details. No Key Accomplishments label. No homepage highlight markers needed.
+Both homepage and printable résumé derive from resume.md. Homepage roles show company, title, and dates ONLY—no summaries, bullet lists, or environment details. All employers and roles are visible; do not hide earlier experience. Full résumé keeps all details. No Key Accomplishments label. No homepage highlight markers needed.
 
 Layout: index.template.html. Website style/behavior: styles.css, site.js. Featured apps: projects.json. Print renderer: render_resume.py, resume.css. Print layout follows Dropbox Current: centered name/contact, blue section headings, compact spacing, company/title and aligned dates, two pages with AI Squared starting page two. Recheck overflow after content changes; allow layout adjustments rather than clipping content.
 

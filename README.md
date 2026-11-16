@@ -17,7 +17,7 @@ Save a PDF manually using the résumé page's Print / save as PDF button. Dropbo
 ## Files
 
 - `resume.md`: sole source of résumé content.
-- `index.template.html`: website layout; experience shows company, title, dates, overview only.
+- `index.template.html`: website layout; experience shows company, title, dates only; all experience visible.
 - `projects.json`: featured project data; currently only Old Man United.
 - `styles.css` / `site.js`: website styling and behavior.
 - `render_resume.py` / `resume.css`: printable layout modeled on Dropbox Current.

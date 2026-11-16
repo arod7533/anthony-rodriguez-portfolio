@@ -36,15 +36,11 @@ for i,match in enumerate(starts):
     role=role_match.group(1) if role_match else ''
     if role_match: body=body[role_match.end():].strip()
     if i==0: current_role=plain(role);current_company=company
-    # The overview is the first paragraph after the role; highlighted bullets
-    # stay in this same source, with no duplicate homepage copy.
-    paragraphs = re.split(r'\n\s*\n', body)
-    overview = paragraphs[0].strip() if paragraphs else ''
-    if overview.startswith(('* ', '**Environment:', '**Key Accomplishments:', '***')):
-        overview = ''
-    website_body = '<p class="role-summary">'+html.escape(plain(overview))+'</p>' if overview else ''
-    articles.append('<article><div class="time">'+inline(dates)+'</div><div><h3>'+inline(company)+'</h3><p class="role">'+inline(role)+'</p>'+website_body+'</div></article>')
-timeline='<div class="timeline">'+''.join(articles[:4])+'<details><summary>Earlier experience <span>Expand +</span></summary>'+''.join(articles[4:])+'</details></div>'
+    # Every position is visible; descriptions remain exclusive to the full résumé.
+    roles = re.findall(r'^\*\*\*(.+?)\*\*\*', experience[match.end():starts[i+1].start() if i+1<len(starts) else len(experience)], re.M)
+    role_html = ''.join('<p class="role">'+inline(title)+'</p>' for title in roles)
+    articles.append('<article><div class="time">'+inline(dates)+'</div><div><h3>'+inline(company)+'</h3>'+role_html+'</div></article>')
+timeline='<div class="timeline">'+''.join(articles)+'</div>'
 skills = content['SKILLS & TRAINING'].strip()
 training=re.search(r'^\*\*Training:\*\*\s*(.+)$',skills,re.M)
 skill_display=re.sub(r'^\*\*Training:\*\*.*$', '',skills,flags=re.M)
