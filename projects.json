@@ -1,10 +1,30 @@
 [
   {
+    "title": "Local AI Chat",
+    "label": "FEATURED PROJECT / LOCAL AI",
+    "description": "A streaming chatbot built with Gradio and Ollama, running Qwen 3.5 locally. Follow-up prompts use conversation history, with no external inference API or API key.",
+    "details": "Watch the 24-second walkthrough: two prompts, streamed replies, and a follow-up rewrite. The app runs locally; this showcase plays a recording.",
+    "tags": [
+      "Python",
+      "Gradio",
+      "Ollama",
+      "Local LLM"
+    ],
+    "liveUrl": "",
+    "sourceUrl": "https://github.com/arod7533/GradioChatBot",
+    "video": "assets/chatbot/demo.mp4",
+    "poster": "assets/chatbot/poster.png"
+  },
+  {
     "title": "Old Man United",
-    "label": "FEATURED PROJECT / LIVE APPLICATION",
+    "label": "ALSO BUILT / LIVE APPLICATION",
     "description": "A mobile-friendly football team dashboard powered by Google Sheets. Explore season records, match results, player goals, clean sheets, and a Golden Boot leaderboard from one shared data source.",
     "details": "Validates incoming match data, handles tied rankings, and retains the last successful view if a refresh fails.",
-    "tags": ["JavaScript", "Google Sheets", "GitHub Pages"],
+    "tags": [
+      "JavaScript",
+      "Google Sheets",
+      "GitHub Pages"
+    ],
     "liveUrl": "https://arod7533.github.io/old-man-utd-stats/",
     "sourceUrl": "https://github.com/arod7533/old-man-utd-stats"
   }

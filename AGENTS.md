@@ -11,7 +11,7 @@ Both homepage and printable résumé derive from resume.md. Homepage roles show 
 Layout: index.template.html. Website style/behavior: styles.css, site.js. Featured apps: projects.json. Print renderer: render_resume.py, resume.css. Print layout follows Dropbox Current: centered name/contact, blue section headings, compact spacing, company/title and aligned dates, two pages with AI Squared starting page two. Recheck overflow after content changes; allow layout adjustments rather than clipping content.
 
 ## User constraints
-- Feature ONLY Old Man United. User rejected Task Manager. Gradio bot is not built; do not list it.
+- Feature Local AI Chat (arod7533/GradioChatBot) first, then Old Man United. User rejected Task Manager. Chatbot is now built; use the recorded demo, not a public live inference endpoint. Media in assets/chatbot comes from GradioChatBot commit aa9a01e556233da488ff3b4361a0076b261e1388. Do not autoplay or invent a hosted demo link.
 - No invented credentials, claims, metrics, dates, or features. Project features were checked against README, not independently tested.
 - Include clickable anthonyarodriguez.com with email, LinkedIn and GitHub at top of résumé. Phone omitted from public view.
 - Consistent midnight/slate, white, cobalt surfaces; no abrupt color transitions, green/tan sections, or orbital AR logo. Name wordmark. Subtle motion with reduced-motion support.
