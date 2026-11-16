@@ -1,19 +1,21 @@
 [
   {
-    "title": "Local AI Chat",
-    "label": "FEATURED PROJECT / LOCAL AI",
-    "description": "A streaming chatbot built with Gradio and Ollama, running Qwen 3.5 locally. Follow-up prompts use conversation history, with no external inference API or API key.",
-    "details": "Watch the 24-second walkthrough: two prompts, streamed replies, and a follow-up rewrite. The app runs locally; this showcase plays a recording.",
+    "title": "Astra Air · Local AI Travel Assistant",
+    "label": "FEATURED PROJECT / AGENTIC AI",
+    "description": "A local airline-support demo built with Gradio, Ollama, and Qwen 3.5. The assistant selects read-only tools to search flights, look up a reservation, check flight status, and explain baggage rules using a fictional SQLite dataset.",
+    "details": "Watch the 73-second walkthrough of multi-tool questions, visible tool results, and a declined cancellation. Recorded at 1.4× speed. Fictional demo data only; no real bookings, payments, or external inference API.",
     "tags": [
       "Python",
       "Gradio",
       "Ollama",
-      "Local LLM"
+      "Tool Calling",
+      "SQLite"
     ],
     "liveUrl": "",
     "sourceUrl": "https://github.com/arod7533/GradioChatBot",
-    "video": "assets/chatbot/demo.mp4",
-    "poster": "assets/chatbot/poster.png"
+    "video": "assets/chatbot/astra-demo-428f142.mp4",
+    "poster": "assets/chatbot/astra-poster-428f142.png",
+    "videoCaption": "73-second recorded demo · 1.4× playback · Fictional data"
   },
   {
     "title": "Old Man United",

@@ -26,7 +26,7 @@ async function loadProjects() {
         source.src = project.video;
         source.type = 'video/mp4';
         video.append(source, document.createTextNode('Your browser does not support embedded video.'));
-        const caption = el('figcaption', '24-second recorded demo · Play to watch');
+        const caption = el('figcaption', project.videoCaption || 'Recorded demo · Play to watch');
         art.append(video, caption);
       } else {
       art = el('div', '', 'project-art football-art');
