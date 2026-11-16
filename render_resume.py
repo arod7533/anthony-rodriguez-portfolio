@@ -22,6 +22,11 @@ def render(source, inline, contact_html):
                 role = parts[i+1].strip().replace('*',''); skip.add(i+1)
                 title = re.sub(r'\s*\([^)]*\)\s*$','',role.split('|')[0]).strip()
                 out = '<header class="job"><div>'+inline(company)+' - '+html.escape(title)+'</div><time>'+inline(dates)+'</time></header>'
+                if '|' in role:
+                    for position in role.split('|'):
+                        match = re.fullmatch(r'(.*?)\s*\(([^)]*)\)', position.strip())
+                        if match:
+                            out += '<div class="position"><span>'+html.escape(match[1].strip())+'</span><time>'+html.escape(match[2])+'</time></div>'
         elif part.startswith('***'):
             role = part.replace('*',''); match = re.fullmatch(r'(.*?)\s*\(([^)]*)\)',role)
             if match: out='<div class="position"><span>'+html.escape(match[1].strip())+'</span><time>'+html.escape(match[2])+'</time></div>'
