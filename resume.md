@@ -29,11 +29,11 @@ arod7533@gmail.com  |  linkedin.com/in/arod7533  |  github.com/arod7533  |  anth
 
 Build web and mobile applications supporting scheduling, medical imaging, and clinical operations. Work with PHI, PII, and DICOM imaging data in a HIPAA-regulated environment.
 
-* Redesigned and shipped member search using OData, helping **clinical operations** find member information more efficiently.
+* Redesigned and shipped member search using OData, helping clinical operations find member information more efficiently.
 
 * Leading delivery of the BodySpec integration, working with external vendors to define requirements and exchange member information, clinical data, and diagnostic reports.
 
-* Worked with APIs that use **OCR to analyze patient documents**.
+* Worked with APIs that use OCR to analyze patient documents.
 
 * Work with senior leadership to define technical requirements and use AI-assisted development to accelerate feature delivery and debugging.
 
@@ -41,7 +41,7 @@ Build web and mobile applications supporting scheduling, medical imaging, and cl
 
 **NextEra Energy (EverBright)**	June 2024 - July 2026
 
-***Senior Software Development Engineer  (Sep 2025 - July 2026)  |  Software Development Engineer II  (June 2024 - Sep 2025)***
+***Senior Software Development Engineer***
 
 *Build and maintain backend services and web applications supporting payments, deal processing, underwriting, risk, and revenue protection.*
 

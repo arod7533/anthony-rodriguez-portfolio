@@ -26,3 +26,5 @@ The user approved the preview and authorized public repository creation, initial
 Experience layout: compact rows, 170px date column on desktop, abbreviated sans-serif dates without letter spacing. Split promotions into one position per line; role dates are smaller muted text, titles blue. Preserve all roles.
 
 Astra Air is a fictional airline-support demo with read-only SQLite tools. Latest video is 73 seconds, accelerated 1.4×; do not present as a latency benchmark or real airline service. Project details verified against README, app.py and airline_data.py at the pinned commit.
+
+User requested NextEra/EverBright as ONE Senior Software Development Engineer role across June 2024–July 2026, with no SDE II or promotion subdates in either view. Function Health bullet text has no inline bold emphasis; preserve consistent plain bullet text.
