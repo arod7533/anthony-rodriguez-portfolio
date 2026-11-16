@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate both résumé views from resume.md. Standard library only."""
 from pathlib import Path
-import re, html
+import re, html, hashlib
 ROOT = Path(__file__).resolve().parent
 source = (ROOT / 'resume.md').read_text()
 def inline(text):
@@ -38,7 +38,7 @@ def homepage_roles(roles):
         for entry in line.split('|'):
             match = re.fullmatch(r'(.*?)\s*\(([^()]*)\)\s*', entry.strip())
             title, dates = (match[1].strip(), match[2]) if match else (entry.strip(), '')
-            output.append('<div class="position-row"><span class="position-title">'+html.escape(title)+'</span>'+('<span class="position-dates">'+html.escape(compact_dates(dates))+'</span>' if dates else '')+'</div>')
+            output.append('<div class="position-row"><span class="position-title">'+html.escape(title)+'</span>'+(' <span class="position-dates">'+html.escape(compact_dates(dates))+'</span>' if dates else '')+'</div>')
     return ''.join(output)
 
 articles=[]
@@ -71,6 +71,10 @@ values['RETENTION_METRIC'] = '$1M+' if '$1MM' in source else 'Reliability'
 page=(ROOT/'index.template.html').read_text()
 for key,value in values.items(): page=page.replace('{{'+key+'}}',value)
 if re.search(r'\{\{\w+\}\}',page):raise ValueError('Unresolved template field')
+# Give changed assets a new URL so cached CSS cannot mismatch fresh markup.
+for asset in ['styles.css', 'site.js']:
+    version = hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
+    page = page.replace('"'+asset+'"', '"'+asset+'?v='+version+'"')
 (ROOT/'index.html').write_text(page)
 header=sections[0].strip().split('\n',1)
 contact_parts = (header[1] if len(header)>1 else '').strip().split('|')
